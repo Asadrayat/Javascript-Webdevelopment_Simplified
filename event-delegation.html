@@ -1,0 +1,60 @@
+<style>
+  .container {
+    display: flex;
+    justify-content: start;
+    margin-top: 20px;
+    gap: 10px;
+    flex-wrap: wrap;
+    max-width: 340px;
+  }
+  .box {
+    width: 100px;
+    height: 100px;
+    border: 3px solid #000;
+    cursor: pointer;
+  }
+  .box.clicked {
+    background-color: #000;
+  }
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Evant Delegation</title>
+  </head>
+  <body>
+    <button data-add-box>Create Box</button>
+    <div class="container">
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+    </div>
+  </body>
+</html>
+
+<script>
+  const boxes = document.querySelectorAll(".box");
+  const addBoxBtn = document.querySelector("[data-add-box]");
+  const container = document.querySelector(".container");
+
+  addBoxBtn.addEventListener("click", (e) => {
+    const box = document.createElement("div");
+    box.classList.add("box");
+    container.appendChild(box);
+  });
+
+  function globalBtnClicked(type,selector, callback){
+    container.addEventListener(type, (e) => {
+    if (e.target.matches(selector)) {
+        callback(e)
+    }
+  });
+  }
+
+  globalBtnClicked("click", ".box", e =>{
+    e.target.classList.toggle("clicked")
+  })
+</script>

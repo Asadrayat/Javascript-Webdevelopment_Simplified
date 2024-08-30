@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+    <form data-maulti-step class="form__wrapper">
+        <div class="inp_div" data-step>
+            <h1>This is Step 1</h1>
+            <label for="email">Email</label>
+            <input type="email" required name="email" placeholder="Email">
+            <label for="password">Password</label>
+            <input type="password" name="password" placeholder="Password">
+            <label for="password">Confirm Password</label>
+            <input type="password" name="Confirm password" placeholder="Confirm password">
+            <input type="button" data-next value="Next">
+        </div>
+        <div class="inp_div" data-step >
+            <h1>This is Step 2</h1>
+            <label for="fname">First Name</label>
+            <input type="text" name="fname" placeholder="First Name">
+            <label for="lname">Last Name</label>
+            <input type="text" name="lname" placeholder="Last Name">
+            <label for="tel">Phone Number</label>
+            <input type="tel" name="tel" placeholder="Phone Number">
+            <input type="button" data-prev value="Previous">
+            <input type="button" data-next value="Next">        
+        </div>
+        <div class="inp_div" data-step>
+            <h1>This is Step 3</h1>
+            <label for="date">Birth Date</label>
+            <label for="date">Birth Date</label>
+            <label for="time">Delivery</label>
+            <input type="time" name="time" >
+            <label for="picture">Add your picture</label>
+            <input type="file" name="picture">
+            <input type="button" data-prev value="Previous">
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+<script src="form.js"></script>
+</body>
+</html>
